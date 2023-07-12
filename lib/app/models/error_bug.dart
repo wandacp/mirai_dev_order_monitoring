@@ -7,7 +7,7 @@ class ErrorBug extends Equatable {
   String? idProject;
   String? prioritas;
   String? status;
-  String? catatan;
+  String? deskripsi;
   String? dokumen;
   Timestamp? tanggal;
 
@@ -17,7 +17,7 @@ class ErrorBug extends Equatable {
     this.idProject,
     this.prioritas,
     this.status,
-    this.catatan,
+    this.deskripsi,
     this.dokumen,
     this.tanggal,
   });
@@ -28,7 +28,7 @@ class ErrorBug extends Equatable {
     idProject = json['idProject'];
     prioritas = json['prioritas'];
     status = json['status'];
-    catatan = json['catatan'];
+    deskripsi = json['deskripsi'];
     dokumen = json['dokumen'];
     tanggal = json['tanggal'];
   }
@@ -40,7 +40,7 @@ class ErrorBug extends Equatable {
     data['idProject'] = idProject;
     data['prioritas'] = prioritas;
     data['status'] = status;
-    data['catatan'] = catatan;
+    data['deskripsi'] = deskripsi;
     data['dokumen'] = dokumen;
     data['tanggal'] = tanggal;
     return data;
@@ -53,7 +53,7 @@ class ErrorBug extends Equatable {
         idProject,
         prioritas,
         status,
-        catatan,
+        deskripsi,
         dokumen,
         tanggal,
       ];

@@ -84,7 +84,7 @@ class ErrorBugTicketsView extends GetView<ErrorBugTicketsController> {
                           Padding(
                             padding: EdgeInsets.all(8.r),
                             child: Text(
-                              errorBug.catatan ?? "-",
+                              errorBug.deskripsi ?? "-",
                               style: textStyle1.copyWith(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
@@ -130,14 +130,6 @@ class ErrorBugTicketsView extends GetView<ErrorBugTicketsController> {
               }).toList(),
             );
           },
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(
-          FontAwesomeIcons.plus,
-          size: 24.r,
-          color: Colors.white,
         ),
       ),
     );

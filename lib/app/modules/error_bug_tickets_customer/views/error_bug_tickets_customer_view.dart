@@ -9,6 +9,7 @@ import 'package:mirai_dev_order_monitoring/app/data/colors.dart';
 import 'package:mirai_dev_order_monitoring/app/data/fonts.dart';
 import 'package:mirai_dev_order_monitoring/app/models/error_bug.dart';
 import 'package:mirai_dev_order_monitoring/app/modules/auth/controllers/auth_controller.dart';
+import 'package:mirai_dev_order_monitoring/app/routes/app_pages.dart';
 import 'package:mirai_dev_order_monitoring/app/utis/convert_waktu.dart';
 
 import '../controllers/error_bug_tickets_customer_controller.dart';
@@ -89,7 +90,7 @@ class ErrorBugTicketsCustomerView
                           Padding(
                             padding: EdgeInsets.all(8.r),
                             child: Text(
-                              errorBug.catatan ?? "-",
+                              errorBug.deskripsi ?? "-",
                               style: textStyle1.copyWith(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
@@ -113,22 +114,41 @@ class ErrorBugTicketsCustomerView
                           SizedBox(
                             height: 4.r,
                           ),
+                          (errorBug.dokumen != null)
+                              ? ElevatedButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    "Dokumen",
+                                    style: textStyle1.copyWith(
+                                      color: ColorHelper.mainColor,
+                                    ),
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.yellow,
+                                  ),
+                                )
+                              : Container(),
                         ],
                       ),
-                      (errorBug.dokumen != null)
-                          ? ElevatedButton(
-                              onPressed: () {},
-                              child: Text(
-                                "Dokumen",
-                                style: textStyle1.copyWith(
-                                  color: ColorHelper.mainColor,
-                                ),
+                      Padding(
+                        padding: EdgeInsets.all(16.r),
+                        child: Row(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Get.toNamed(
+                                  "${Routes.CREATE_UPDATE_ERROR_BUG}/update/${errorBug.id}",
+                                );
+                              },
+                              child: Icon(
+                                FontAwesomeIcons.penToSquare,
+                                color: Colors.white,
+                                size: 24.r,
                               ),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.yellow,
-                              ),
-                            )
-                          : Container(),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 );
@@ -138,7 +158,9 @@ class ErrorBugTicketsCustomerView
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(Routes.CREATE_UPDATE_ERROR_BUG);
+        },
         child: Icon(
           FontAwesomeIcons.plus,
           size: 24.r,

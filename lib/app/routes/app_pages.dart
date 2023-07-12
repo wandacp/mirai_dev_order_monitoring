@@ -90,7 +90,7 @@ class AppPages {
       binding: CreateLogProjectBinding(),
     ),
     GetPage(
-      name: _Paths.CREATE_UPDATE_ERROR_BUG,
+      name: "${_Paths.CREATE_UPDATE_ERROR_BUG}/:type/:id",
       page: () => CreateUpdateErrorBugView(),
       binding: CreateUpdateErrorBugBinding(),
     ),
