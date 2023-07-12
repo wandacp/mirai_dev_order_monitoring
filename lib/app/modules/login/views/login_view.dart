@@ -20,6 +20,9 @@ class LoginView extends GetView<LoginController> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Image.asset(
+                "assets/images/logo_tulisan.png",
+              ),
               Text(
                 'MiraiDev | Order Monitoring',
                 style: textStyle1.copyWith(
