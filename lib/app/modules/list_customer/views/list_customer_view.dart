@@ -104,17 +104,6 @@ class ListCustomerView extends GetView<ListCustomerController> {
                         child: Row(
                           children: [
                             InkWell(
-                              onTap: () {},
-                              child: Icon(
-                                FontAwesomeIcons.listCheck,
-                                color: Colors.white,
-                                size: 24.r,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 16.r,
-                            ),
-                            InkWell(
                               onTap: () {
                                 Get.toNamed(
                                   "${Routes.CREATE_UPDATE_CUSTOMER}/update/${userApp.uid}",
