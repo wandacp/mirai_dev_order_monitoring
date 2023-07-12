@@ -15,6 +15,7 @@ class UpdateProjectCustomerController extends GetxController {
   Rxn<ItemProject?> itemProject = Rxn<ItemProject?>();
   Rxn<UserApp?> customerTerpilih = Rxn<UserApp?>();
   Rx<bool> isLoading = false.obs;
+  Rx<bool> isLoadingData = false.obs;
 
   @override
   Future<void> onInit() async {
@@ -24,6 +25,10 @@ class UpdateProjectCustomerController extends GetxController {
 
     this.itemProject.value = ItemProject();
 
+    toggleIsLoadingData();
+
+    await loadDataCustomer();
+
     if (id != null) {
       await loadDataProject(id);
 
@@ -32,7 +37,7 @@ class UpdateProjectCustomerController extends GetxController {
           this.itemProject.value?.deskripsiProject ?? "";
     }
 
-    await loadDataCustomer();
+    toggleIsLoadingData();
   }
 
   @override
@@ -47,6 +52,10 @@ class UpdateProjectCustomerController extends GetxController {
 
   void toggleIsLoading() {
     this.isLoading.toggle();
+  }
+
+  void toggleIsLoadingData() {
+    this.isLoadingData.toggle();
   }
 
   Future<void> loadDataCustomer() async {

@@ -256,102 +256,104 @@ class CreateUpdateProjectView extends GetView<CreateUpdateProjectController> {
                     fontSize: 12.sp,
                   ),
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  child: ButtonTheme(
-                    alignedDropdown: true,
-                    child: DropdownButtonFormField<String?>(
-                      style: textStyle1.copyWith(
-                        color: Colors.black,
-                        fontSize: 12.sp,
-                      ),
-                      value: (controller.itemProject.value!
-                                  .isAllowToUpdateByCustomer ==
-                              true)
-                          ? "Ya"
-                          : "Tidak",
-                      icon: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8.r),
-                        child: Icon(
-                          FontAwesomeIcons.circleChevronDown,
+                Obx(
+                  () => Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    child: ButtonTheme(
+                      alignedDropdown: true,
+                      child: DropdownButtonFormField<String?>(
+                        style: textStyle1.copyWith(
                           color: Colors.black,
-                          size: 12.r,
+                          fontSize: 12.sp,
                         ),
-                      ),
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(vertical: 16.r),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
+                        value: (controller.itemProject.value!
+                                    .isAllowToUpdateByCustomer ==
+                                true)
+                            ? "Ya"
+                            : "Tidak",
+                        icon: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 8.r),
+                          child: Icon(
+                            FontAwesomeIcons.circleChevronDown,
                             color: Colors.black,
-                            width: 2.r,
+                            size: 12.r,
                           ),
                         ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.black,
-                            width: 1,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.black,
-                            width: 1,
-                          ),
-                        ),
-                      ),
-                      onChanged: (String? value) {
-                        if (value != null) {
-                          controller.itemProject.update((val) {
-                            if (value == "Ya") {
-                              val!.isAllowToUpdateByCustomer = true;
-                            } else {
-                              val!.isAllowToUpdateByCustomer = false;
-                            }
-                          });
-                        }
-                      },
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Pilihan tidak boleh kosong';
-                        }
-
-                        return null;
-                      },
-                      items: ["Ya", "Tidak"]
-                          .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(8.r),
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.symmetric(vertical: 16.r),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                              width: 2.r,
                             ),
-                            child: Padding(
-                              padding: EdgeInsets.all(10.r),
-                              child: Text(
-                                value,
-                                style: textStyle1.copyWith(
-                                  color: Colors.black,
-                                  fontSize: 12.sp,
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                              width: 1,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                              width: 1,
+                            ),
+                          ),
+                        ),
+                        onChanged: (String? value) {
+                          if (value != null) {
+                            controller.itemProject.update((val) {
+                              if (value == "Ya") {
+                                val!.isAllowToUpdateByCustomer = true;
+                              } else {
+                                val!.isAllowToUpdateByCustomer = false;
+                              }
+                            });
+                          }
+                        },
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Pilihan tidak boleh kosong';
+                          }
+
+                          return null;
+                        },
+                        items: ["Ya", "Tidak"]
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(8.r),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(10.r),
+                                child: Text(
+                                  value,
+                                  style: textStyle1.copyWith(
+                                    color: Colors.black,
+                                    fontSize: 12.sp,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        );
-                      }).toList(),
-                      selectedItemBuilder: (context) {
-                        return ["Ya", "Tidak"].map<Widget>((String item) {
-                          return Text(
-                            item,
-                            style: textStyle1.copyWith(
-                              color: Colors.black,
-                              fontSize: 12.sp,
-                            ),
                           );
-                        }).toList();
-                      },
+                        }).toList(),
+                        selectedItemBuilder: (context) {
+                          return ["Ya", "Tidak"].map<Widget>((String item) {
+                            return Text(
+                              item,
+                              style: textStyle1.copyWith(
+                                color: Colors.black,
+                                fontSize: 12.sp,
+                              ),
+                            );
+                          }).toList();
+                        },
+                      ),
                     ),
                   ),
                 ),

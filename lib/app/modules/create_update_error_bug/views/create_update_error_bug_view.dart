@@ -160,7 +160,7 @@ class CreateUpdateErrorBugView extends GetView<CreateUpdateErrorBugController> {
                           color: Colors.black,
                           fontSize: 12.sp,
                         ),
-                        value: controller.errorBug.value!.prioritas,
+                        value: controller.errorBug.value!.prioritas ?? "Low",
                         icon: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 8.r),
                           child: Icon(
@@ -502,8 +502,8 @@ class CreateUpdateErrorBugView extends GetView<CreateUpdateErrorBugController> {
                                   children: [
                                     Text(
                                       controller.type.value == "create"
-                                          ? 'Create Project'
-                                          : 'Update Project',
+                                          ? 'Create Error & Bug'
+                                          : 'Update Error & Bug',
                                       style: textStyle1.copyWith(
                                         color: Colors.white,
                                         fontSize: 16.sp,
