@@ -159,7 +159,9 @@ class ErrorBugTicketsCustomerView
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Get.toNamed(Routes.CREATE_UPDATE_ERROR_BUG);
+          Get.toNamed(
+            "${Routes.CREATE_UPDATE_ERROR_BUG}/create/${null}",
+          );
         },
         child: Icon(
           FontAwesomeIcons.plus,
