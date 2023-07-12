@@ -1,9 +1,6 @@
 import 'package:get/get.dart';
 
 class ListProjectCustomerController extends GetxController {
-  //TODO: Implement ListProjectCustomerController
-
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +15,4 @@ class ListProjectCustomerController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

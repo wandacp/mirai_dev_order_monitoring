@@ -1,9 +1,6 @@
 import 'package:get/get.dart';
 
 class CreateUpdateErrorBugController extends GetxController {
-  //TODO: Implement CreateUpdateErrorBugController
-
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +15,4 @@ class CreateUpdateErrorBugController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

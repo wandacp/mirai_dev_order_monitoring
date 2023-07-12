@@ -22,6 +22,10 @@ class LoginView extends GetView<LoginController> {
             children: [
               Image.asset(
                 "assets/images/logo_tulisan.png",
+                height: 100.r,
+              ),
+              SizedBox(
+                height: 32.h,
               ),
               Text(
                 'MiraiDev | Order Monitoring',
