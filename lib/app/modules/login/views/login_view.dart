@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:mirai_dev_order_monitoring/app/data/fonts.dart';
 import 'package:mirai_dev_order_monitoring/app/modules/auth/controllers/auth_controller.dart';
+import 'package:mirai_dev_order_monitoring/app/routes/app_pages.dart';
 
 import '../controllers/login_controller.dart';
 
@@ -159,6 +160,15 @@ class LoginView extends GetView<LoginController> {
                             keyboardType: TextInputType.visiblePassword,
                             obscureText: true,
                           ),
+                        ),
+                        SizedBox(
+                          height: 16.h,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            Get.toNamed(Routes.LUPA_PASSWORD);
+                          },
+                          child: Text("Lupa Password ? "),
                         ),
                         SizedBox(
                           height: 48.h,

@@ -18,6 +18,7 @@ abstract class Routes {
   static const UPDATE_PROJECT_CUSTOMER = _Paths.UPDATE_PROJECT_CUSTOMER;
   static const LOGS_PROJECT_CUSTOMER = _Paths.LOGS_PROJECT_CUSTOMER;
   static const ERROR_BUG_TICKETS_CUSTOMER = _Paths.ERROR_BUG_TICKETS_CUSTOMER;
+  static const LUPA_PASSWORD = _Paths.LUPA_PASSWORD;
 }
 
 abstract class _Paths {
@@ -37,4 +38,5 @@ abstract class _Paths {
   static const UPDATE_PROJECT_CUSTOMER = '/update-project-customer';
   static const LOGS_PROJECT_CUSTOMER = '/logs-project-customer';
   static const ERROR_BUG_TICKETS_CUSTOMER = '/error-bug-tickets-customer';
+  static const LUPA_PASSWORD = '/lupa-password';
 }

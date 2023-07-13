@@ -107,6 +107,23 @@ class AuthController extends GetxController {
     toggleIsLoadingData();
   }
 
+  Future<void> lupaPassword(String email) async {
+    try {
+      await FirebaseAuth.instance
+          .sendPasswordResetEmail(email: email)
+          .then((value) {
+        Get.back(closeOverlays: true);
+        Get.snackbar(
+            "Reset Password Berhasil", "Link reset password telah dikirimkan.");
+      });
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+        Get.snackbar("Reset Password Gagal", "Email anda belum terdaftar");
+      }
+    }
+  }
+
   Future<void> updateDataUser(UserApp userApp) async {
     try {
       await FirebaseFirestore.instance

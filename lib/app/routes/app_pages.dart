@@ -28,6 +28,8 @@ import '../modules/logs_project/bindings/logs_project_binding.dart';
 import '../modules/logs_project/views/logs_project_view.dart';
 import '../modules/logs_project_customer/bindings/los_project_customer_binding.dart';
 import '../modules/logs_project_customer/views/los_project_customer_view.dart';
+import '../modules/lupa_password/bindings/lupa_password_binding.dart';
+import '../modules/lupa_password/views/lupa_password_view.dart';
 import '../modules/update_project_customer/bindings/update_project_customer_binding.dart';
 import '../modules/update_project_customer/views/update_project_customer_view.dart';
 
@@ -113,6 +115,11 @@ class AppPages {
       name: _Paths.ERROR_BUG_TICKETS_CUSTOMER,
       page: () => ErrorBugTicketsCustomerView(),
       binding: ErrorBugTicketsCustomerBinding(),
+    ),
+    GetPage(
+      name: _Paths.LUPA_PASSWORD,
+      page: () => LupaPasswordView(),
+      binding: LupaPasswordBinding(),
     ),
   ];
 }
