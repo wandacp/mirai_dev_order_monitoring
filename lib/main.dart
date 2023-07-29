@@ -33,7 +33,7 @@ class MainApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
         return GetMaterialApp(
-          title: "MiraiDev | Order Monitoring",
+          title: "MiraiDev | Project Monitoring",
           theme: ThemeData(
             colorScheme: ColorScheme(
               brightness: Brightness.light,

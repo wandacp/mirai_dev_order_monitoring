@@ -136,24 +136,24 @@ class ListProjectCustomerView extends GetView<ListProjectCustomerController> {
                                   size: 24.r,
                                 ),
                               ),
-                              InkWell(
-                                onTap: () {
-                                  if (itemProject.isAllowToUpdateByCustomer ==
-                                      true) {
-                                    Get.toNamed(
-                                      "${Routes.UPDATE_PROJECT_CUSTOMER}/${itemProject.id}",
-                                    );
-                                  } else {
-                                    Get.snackbar("Project Telah Dikunci",
-                                        "Project tidak dapat diedit oleh pelanggan.");
-                                  }
-                                },
-                                child: Icon(
-                                  FontAwesomeIcons.penToSquare,
-                                  color: Colors.white,
-                                  size: 24.r,
-                                ),
-                              ),
+                              // InkWell(
+                              //   onTap: () {
+                              //     if (itemProject.isAllowToUpdateByCustomer ==
+                              //         true) {
+                              //       Get.toNamed(
+                              //         "${Routes.UPDATE_PROJECT_CUSTOMER}/${itemProject.id}",
+                              //       );
+                              //     } else {
+                              //       Get.snackbar("Project Telah Dikunci",
+                              //           "Project tidak dapat diedit oleh pelanggan.");
+                              //     }
+                              //   },
+                              //   child: Icon(
+                              //     FontAwesomeIcons.penToSquare,
+                              //     color: Colors.white,
+                              //     size: 24.r,
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),

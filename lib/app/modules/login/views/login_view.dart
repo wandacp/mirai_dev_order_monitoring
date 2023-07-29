@@ -29,7 +29,7 @@ class LoginView extends GetView<LoginController> {
                 height: 32.h,
               ),
               Text(
-                'MiraiDev | Order Monitoring',
+                'MiraiDev | Project Monitoring',
                 style: textStyle1.copyWith(
                   color: Colors.black,
                   fontSize: 32.sp,

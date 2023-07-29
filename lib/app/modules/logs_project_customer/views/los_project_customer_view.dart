@@ -126,18 +126,18 @@ class LogsProjectCustomerView extends GetView<LogsProjectCustomerController> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Get.toNamed(
-            "${Routes.CREATE_LOG_PROJECT}/${controller.itemProject.value!.id}",
-          );
-        },
-        child: Icon(
-          FontAwesomeIcons.plus,
-          size: 24.r,
-          color: Colors.white,
-        ),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Get.toNamed(
+      //       "${Routes.CREATE_LOG_PROJECT}/${controller.itemProject.value!.id}",
+      //     );
+      //   },
+      //   child: Icon(
+      //     FontAwesomeIcons.plus,
+      //     size: 24.r,
+      //     color: Colors.white,
+      //   ),
+      // ),
     );
   }
 }
