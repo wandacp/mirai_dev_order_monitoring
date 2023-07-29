@@ -418,6 +418,7 @@ class CreateUpdateErrorBugView extends GetView<CreateUpdateErrorBugController> {
                     FilePickerResult? result =
                         await FilePicker.platform.pickFiles(
                       type: FileType.custom,
+                      allowedExtensions: ['pdf'],
                     );
 
                     if (result != null) {

@@ -214,6 +214,7 @@ class CreateLogProjectView extends GetView<CreateLogProjectController> {
                     FilePickerResult? result =
                         await FilePicker.platform.pickFiles(
                       type: FileType.custom,
+                      allowedExtensions: ['pdf'],
                     );
 
                     if (result != null) {
