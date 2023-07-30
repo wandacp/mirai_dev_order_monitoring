@@ -10,6 +10,7 @@ import 'package:mirai_dev_order_monitoring/app/data/fonts.dart';
 import 'package:mirai_dev_order_monitoring/app/models/error_bug.dart';
 import 'package:mirai_dev_order_monitoring/app/routes/app_pages.dart';
 import 'package:mirai_dev_order_monitoring/app/utis/convert_waktu.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../controllers/error_bug_tickets_controller.dart';
 
@@ -111,7 +112,15 @@ class ErrorBugTicketsView extends GetView<ErrorBugTicketsController> {
                           ),
                           (errorBug.dokumen != null)
                               ? ElevatedButton(
-                                  onPressed: () {},
+                                  onPressed: () async {
+                                    String urlDownload = errorBug.dokumen!;
+
+                                    final Uri url = Uri.parse(urlDownload);
+
+                                    if (!await launchUrl(url)) {
+                                      throw 'Could not launch $url';
+                                    }
+                                  },
                                   child: Text(
                                     "Dokumen",
                                     style: textStyle1.copyWith(

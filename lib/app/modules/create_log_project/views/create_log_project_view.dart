@@ -233,6 +233,9 @@ class CreateLogProjectView extends GetView<CreateLogProjectController> {
                             controller.logProject.update((val) async {
                               val!.dokumen = await value.ref.getDownloadURL();
                             });
+
+                            controller.fileNameUploaded.value =
+                                result.files.first.name;
                           });
                         } on FirebaseException catch (e) {
                           print(e);
@@ -248,6 +251,18 @@ class CreateLogProjectView extends GetView<CreateLogProjectController> {
                         color: Colors.black,
                         width: 1.r,
                       ),
+                    ),
+                    child: Row(
+                      children: [
+                        Obx(
+                          () => Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.r),
+                            child: Text(
+                              "${controller.fileNameUploaded.value}",
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

@@ -7,6 +7,7 @@ class CreateLogProjectController extends GetxController {
   Rxn<ItemProject?> itemProject = Rxn<ItemProject?>();
   Rxn<LogProject?> logProject = Rxn<LogProject?>();
   Rx<bool> isLoading = false.obs;
+  Rx<String> fileNameUploaded = "".obs;
 
   @override
   Future<void> onInit() async {

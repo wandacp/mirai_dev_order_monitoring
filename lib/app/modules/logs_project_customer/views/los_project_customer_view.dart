@@ -7,6 +7,7 @@ import 'package:mirai_dev_order_monitoring/app/data/colors.dart';
 import 'package:mirai_dev_order_monitoring/app/data/fonts.dart';
 import 'package:mirai_dev_order_monitoring/app/routes/app_pages.dart';
 import 'package:mirai_dev_order_monitoring/app/utis/convert_waktu.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../controllers/los_project_customer_controller.dart';
 
@@ -106,7 +107,19 @@ class LogsProjectCustomerView extends GetView<LogsProjectCustomerController> {
                                           .dokumen !=
                                       null)
                                   ? ElevatedButton(
-                                      onPressed: () {},
+                                      onPressed: () async {
+                                        String urlDownload = controller
+                                            .itemProject
+                                            .value!
+                                            .logProject![i]
+                                            .dokumen!;
+
+                                        final Uri url = Uri.parse(urlDownload);
+
+                                        if (!await launchUrl(url)) {
+                                          throw 'Could not launch $url';
+                                        }
+                                      },
                                       child: Text(
                                         "Dokumen",
                                         style: textStyle1.copyWith(

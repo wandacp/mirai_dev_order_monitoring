@@ -15,6 +15,7 @@ class CreateUpdateErrorBugController extends GetxController {
   Rxn<ItemProject?> itemProjectTerpilih = Rxn<ItemProject?>();
   Rxn<String?> type = Rxn<String?>();
   Rx<bool> isLoading = false.obs;
+  Rx<String> fileNameUploaded = "".obs;
 
   @override
   Future<void> onInit() async {

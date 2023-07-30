@@ -436,6 +436,9 @@ class CreateUpdateErrorBugView extends GetView<CreateUpdateErrorBugController> {
                             controller.errorBug.update((val) async {
                               val!.dokumen = await value.ref.getDownloadURL();
                             });
+
+                            controller.fileNameUploaded.value =
+                                result.files.first.name;
                           });
                         } on FirebaseException catch (e) {
                           print(e);
@@ -451,6 +454,18 @@ class CreateUpdateErrorBugView extends GetView<CreateUpdateErrorBugController> {
                         color: Colors.black,
                         width: 1.r,
                       ),
+                    ),
+                    child: Row(
+                      children: [
+                        Obx(
+                          () => Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.r),
+                            child: Text(
+                              "${controller.fileNameUploaded.value}",
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
